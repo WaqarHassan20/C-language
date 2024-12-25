@@ -4,7 +4,6 @@ int main() {
     // ===== 1. ARITHMETIC OPERATORS =====
     printf("1. ARITHMETIC OPERATORS\n");
     int a = 10, b = 3;
-    printf("Main waqar padon wala hu");
     // Basic arithmetic operations
     printf("Given: a = %d, b = %d\n", a, b);
     printf("Addition (a + b): %d\n", a + b);        // Addition
