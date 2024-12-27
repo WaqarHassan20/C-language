@@ -141,6 +141,7 @@ void generateFibonacci(int terms)
     printf("\n"); // escape sequence which means new line
 }
 
+
 int main()
 {
     printf("\n===== FUNCTION DEMONSTRATIONS =====\n\n");
