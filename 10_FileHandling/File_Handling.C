@@ -96,122 +96,122 @@ void appendFileDemo()
     fclose(file);
 }
 
-// // Function to demonstrate file positioning using fseek
-// void fseekDemo()
-// {
-//     printf("\n===== 4. FILE POSITIONING DEMONSTRATION =====\n");
+// Function to demonstrate file positioning using fseek
+void fseekDemo()
+{
+    printf("\n===== 4. FILE POSITIONING DEMONSTRATION =====\n");
 
-//     FILE *file = fopen("sample.txt", "r+");
-//     if (file == NULL)
-//     {
-//         printf("Error opening file!\n");
-//         return;
-//     }
+    FILE *file = fopen("sample.txt", "r+");
+    if (file == NULL)
+    {
+        printf("Error opening file!\n");
+        return;
+    }
 
-//     // Moving to end of file
-//     fseek(file, 0, SEEK_END);
-//     long size = ftell(file);
-//     printf("File size: %ld bytes\n", size);
+    // Moving to end of file
+    fseek(file, 0, SEEK_END);
+    long size = ftell(file);
+    printf("File size: %ld bytes\n", size);
 
-//     // Moving to beginning of file
-//     rewind(file);
+    // Moving to beginning of file
+    rewind(file);
 
-//     // Reading first character
-//     char ch = fgetc(file);
-//     printf("First character: %c\n", ch);
+    // Reading first character
+    char ch = fgetc(file);
+    printf("First character: %c\n", ch);
 
-//     // Moving 10 bytes from current position
-//     fseek(file, 10, SEEK_CUR);
-//     ch = fgetc(file);
-//     printf("Character at position 11: %c\n", ch);
+    // Moving 10 bytes from current position
+    fseek(file, 10, SEEK_CUR);
+    ch = fgetc(file);
+    printf("Character at position 11: %c\n", ch);
 
-//     fclose(file);
-// }
+    fclose(file);
+}
 
-// // Function to demonstrate binary file operations
-// void binaryFileDemo()
-// {
-//     printf("\n===== 5. BINARY FILE OPERATIONS DEMONSTRATION =====\n");
+// Function to demonstrate binary file operations
+void binaryFileDemo()
+{
+    printf("\n===== 5. BINARY FILE OPERATIONS DEMONSTRATION =====\n");
 
-//     // Create sample student data
-//     struct Student students[] = {
-//         {1, "John Doe", 3.8},
-//         {2, "Jane Smith", 3.9},
-//         {3, "Bob Johnson", 3.7}};
+    // Create sample student data
+    struct Student students[] = {
+        {1, "John Doe", 3.8},
+        {2, "Jane Smith", 3.9},
+        {3, "Bob Johnson", 3.7}};
 
-//     // Writing to binary file
-//     FILE *file = fopen("students.bin", "wb");
-//     if (file == NULL)
-//     {
-//         printf("Error opening binary file for writing!\n");
-//         return;
-//     }
+    // Writing to binary file
+    FILE *file = fopen("students.bin", "wb");
+    if (file == NULL)
+    {
+        printf("Error opening binary file for writing!\n");
+        return;
+    }
 
-//     fwrite(students, sizeof(struct Student), 3, file);
-//     fclose(file);
+    fwrite(students, sizeof(struct Student), 3, file);
+    fclose(file);
 
-//     // Reading from binary file
-//     file = fopen("students.bin", "rb");
-//     if (file == NULL)
-//     {
-//         printf("Error opening binary file for reading!\n");
-//         return;
-//     }
+    // Reading from binary file
+    file = fopen("students.bin", "rb");
+    if (file == NULL)
+    {
+        printf("Error opening binary file for reading!\n");
+        return;
+    }
 
-//     struct Student readStudents[3];
-//     fread(readStudents, sizeof(struct Student), 3, file);
+    struct Student readStudents[3];
+    fread(readStudents, sizeof(struct Student), 3, file);
 
-//     printf("Student Records:\n");
-//     for (int i = 0; i < 3; i++)
-//     {
-//         printf("ID: %d, Name: %s, GPA: %.2f\n",
-//                readStudents[i].id,
-//                readStudents[i].name,
-//                readStudents[i].gpa);
-//     }
+    printf("Student Records:\n");
+    for (int i = 0; i < 3; i++)
+    {
+        printf("ID: %d, Name: %s, GPA: %.2f\n",
+               readStudents[i].id,
+               readStudents[i].name,
+               readStudents[i].gpa);
+    }
 
-//     fclose(file);
-// }
+    fclose(file);
+}
 
-// // Function to demonstrate file error handling
-// void fileErrorHandling()
-// {
-//     printf("\n===== 6. FILE ERROR HANDLING DEMONSTRATION =====\n");
+// Function to demonstrate file error handling
+void fileErrorHandling()
+{
+    printf("\n===== 6. FILE ERROR HANDLING DEMONSTRATION =====\n");
 
-//     FILE *file = fopen("nonexistent.txt", "r");
-//     if (file == NULL)
-//     {
-//         perror("Error opening file");
-//         printf("Error number: %d\n", ferror(file));
-//         return;
-//     }
+    FILE *file = fopen("nonexistent.txt", "r");
+    if (file == NULL)
+    {
+        perror("Error opening file");
+        printf("Error number: %d\n", ferror(file));
+        return;
+    }
 
-//     // This won't execute if file doesn't exist
-//     fclose(file);
-// }
+    // This won't execute if file doesn't exist
+    fclose(file);
+}
 
-// int main()
-// {
-//     printf("FILE HANDLING DEMONSTRATIONS IN C\n");
-//     printf("===============================\n");
+int main()
+{
+    printf("FILE HANDLING DEMONSTRATIONS IN C\n");
+    printf("===============================\n");
 
-//     // 1. Writing to file
-//     writeFileDemo();
+    // 1. Writing to file
+    writeFileDemo();
 
-//     // 2. Reading from file
-//     readFileDemo();
+    // 2. Reading from file
+    readFileDemo();
 
-//     // 3. Appending to file
-//     appendFileDemo();
+    // 3. Appending to file
+    appendFileDemo();
 
-//     // 4. File positioning
-//     fseekDemo();
+    // 4. File positioning
+    fseekDemo();
 
-//     // 5. Binary file operations
-//     binaryFileDemo();
+    // 5. Binary file operations
+    binaryFileDemo();
 
-//     // 6. Error handling
-//     fileErrorHandling();
+    // 6. Error handling
+    fileErrorHandling();
 
-//     return 0;
-// }
+    return 0;
+}
