@@ -75,26 +75,26 @@ void readFileDemo()
     fclose(file);
 }
 
-// // Function to demonstrate appending to a file
-// void appendFileDemo()
-// {
-//     printf("\n===== 3. APPENDING TO FILE DEMONSTRATION =====\n");
+// Function to demonstrate appending to a file
+void appendFileDemo()
+{
+    printf("\n===== 3. APPENDING TO FILE DEMONSTRATION =====\n");
 
-//     FILE *file = fopen("sample.txt", "a");
-//     if (file == NULL)
-//     {
-//         printf("Error opening file for appending!\n");
-//         return;
-//     }
+    FILE *file = fopen("sample.txt", "a");
+    if (file == NULL)
+    {
+        printf("Error opening file for appending!\n");
+        return;
+    }
 
-//     // Appending new content
-//     fprintf(file, "\nAppended line 1\n");
-//     fprintf(file, "Appended line 2\n");
+    // Appending new content
+    fprintf(file, "\nAppended line 1\n");
+    fprintf(file, "Appended line 2\n");
 
-//     printf("Data appended to file successfully!\n");
+    printf("Data appended to file successfully!\n");
 
-//     fclose(file);
-// }
+    fclose(file);
+}
 
 // // Function to demonstrate file positioning using fseek
 // void fseekDemo()
